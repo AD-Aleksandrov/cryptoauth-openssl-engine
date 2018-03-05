@@ -101,9 +101,9 @@ security implications */
 
 /** \brief Configuration is statically compiled into the library rather than
 loaded from a file or an application */
-#ifndef ATCA_OPENSSL_ENGINE_STATIC_CONFIG
+/* #ifndef ATCA_OPENSSL_ENGINE_STATIC_CONFIG
 #define ATCA_OPENSSL_ENGINE_STATIC_CONFIG       (1)
-#endif
+#endif */
 
 /* Global Macros/Definitions */
 

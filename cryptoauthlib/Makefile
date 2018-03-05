@@ -1,8 +1,9 @@
 .PHONY: all libcryptoauth libateccssl libpkcs11 dist install clean
 
-OPTIONS := ATCAPRINTF ATCA_HAL_KIT_CDC ENGINE_DYNAMIC_SUPPORT USE_ECCX08 ECC_DEBUG
+OPTIONS := ATCAPRINTF ATCA_HAL_I2C ENGINE_DYNAMIC_SUPPORT USE_ECCX08 ECC_DEBUG
 
 SYSTEM_INCLUDES := /usr/include
+TARGET_HAL = I2C
 
 # Check platform
 ifeq ($(OS),Windows_NT)
@@ -38,7 +39,7 @@ endif
 endif
 
 ifeq ($(uname_S),Linux)
-CFLAGS += -g -O1 -m64 -Wall -fPIC $(addprefix -D,$(OPTIONS))
+CFLAGS += -g -O1 -Wall -fPIC $(addprefix -D,$(OPTIONS))
 TARGET_ARCH := Linux
 endif
 #    ifeq ($(uname_S),Darwin)
